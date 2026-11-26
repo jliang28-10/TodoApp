@@ -44,18 +44,16 @@ public class Sorts {
         // TODO
         int j= a.length;
 
-        while(!isSorted(a,field)){
-            int numswap=0;
+        while(j>1){
+            boolean swapped = false;
             for(int i=0; i<j-1; i++){
-                if (less(a[j + 1], a[j], c)) {
-                    exchange(a, j, j + 1);
-                    swapped = true;
+                if(less(a[i+1], a[i], c)){
+                    exchange(a, i, i+1);
+                    swapped=true;
                 }
-
             }
+            if(!swapped) break;
             j--;
-            if(numswap==0)
-                break;
         }
     }
 }
